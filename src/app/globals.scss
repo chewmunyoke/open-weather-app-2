@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .responsive {
+    @apply mx-4 md:mx-auto md:max-w-[75%] lg:max-w-[50%];
+  }
+
+  .responsive-modal {
+    @apply mx-8 md:mx-auto md:max-w-[50%] xl:max-w-[25%];
+  }
+}
+
+.modal {
+  &--enter {
+    opacity: 0;
+    > div {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+  }
+
+  &--enter-active {
+    opacity: 1;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: opacity 300ms;
+    }
+    > div {
+      opacity: 1;
+      transform: translateY(0rem);
+      @media (prefers-reduced-motion: no-preference) {
+        transition:
+          opacity 300ms,
+          transform 300ms;
+      }
+    }
+  }
+
+  &--exit {
+    opacity: 1;
+    > div {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+  &--exit-active {
+    opacity: 0;
+    @media (prefers-reduced-motion: no-preference) {
+      transition: opacity 200ms;
+    }
+    > div {
+      opacity: 0;
+      transform: translateY(2rem);
+      @media (prefers-reduced-motion: no-preference) {
+        transition:
+          opacity 200ms,
+          transform 200ms;
+      }
+    }
+  }
+}
+
+.message {
+  &--enter {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+
+  &--enter-active {
+    opacity: 1;
+    transform: translateY(0rem);
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        opacity 200ms,
+        transform 200ms;
+    }
+  }
+
+  &--exit {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+
+  &--exit-active {
+    opacity: 0;
+    transform: translateY(-2rem);
+    @media (prefers-reduced-motion: no-preference) {
+      transition:
+        opacity 200ms,
+        transform 200ms;
+    }
+  }
+}
