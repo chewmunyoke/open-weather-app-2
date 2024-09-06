@@ -99,7 +99,7 @@ export default function WeatherCard({
         ) : weatherData ? (
           <div className='relative flex flex-col'>
             <div
-              className='absolute right-0 z-10 aspect-square'
+              className='absolute right-0 z-10 aspect-square transition-all motion-reduce:transition-none'
               style={{
                 top: `calc(var(${CSS_VAR_IMG_SIZE}) / -2 - 1rem)`,
                 width: `var(${CSS_VAR_IMG_SIZE})`,
